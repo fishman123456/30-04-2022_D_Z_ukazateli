@@ -30,6 +30,7 @@ int Foo1()
 	}
 	//delete[] dan1;
 	razm = sizeof(dan1);
+	dan1 = dan1 - size1;
 	cout << "размерность массива : " << size1 << endl;
 	for (int i = 0; i < size1; i++, dan1++)
 	{

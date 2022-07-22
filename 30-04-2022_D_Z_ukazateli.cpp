@@ -16,7 +16,8 @@ int Foo1()
 	cout << "1 Фунция распределения динамической памяти\n";
 	int* dan1;
 	cout << "Ввести размерность массива : ";
-	int size1;
+	int size1{0};
+	int size2{ size1 };
 	cin >> size1;
 	dan1 = new int[size1];
 	for (int i = 0; i < size1; i++) {
@@ -29,30 +30,30 @@ int Foo1()
 		cout << "\t\tзначение " << *dan1 << "\n";
 	}
 	//delete[] dan1;
+	//-----------------------------------------------------------------
+	// копируем массив и переставляем, и последние станут первыми
 	razm = sizeof(dan1);
+	int* dan2;
+	dan2 = new int[size2];
 	cout << "размерность массива : " << size1 << endl;
 	for (int i = 0; i < size1; i++, dan1++)
 	{
-		cout << "\nадрес " << &*dan1;
-		cout << "\t\tзначение " << *dan1 << "\n";
+		val = *dan1;								// не решено
+		cout << "\nадрес " << dan2;						// как решать не надо
+		cout << "\t\tзначение " << dan2[i] << "\n";
 	}
-
 	cin.get();
-	return 0;
+	return *dan1;
 }
 int GetRandomNumber()
 {
-
 	//	srand(time(NULL));
 	int min{ 0 };
 	int max{ 9 };
 	// Установить генератор случайных чисел
-
 	// Получить случайное число - формула
 	int num = min + rand() % (max - min + 1);
-
 	return num;
-
 }
 int main()
 {
